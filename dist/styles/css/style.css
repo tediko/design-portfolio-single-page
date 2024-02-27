@@ -424,6 +424,7 @@ body {
 @media (min-width: 48.0625rem) {
   .portfolio__list {
     gap: 1.875rem;
+    cursor: grab;
   }
 }
 .portfolio__item {
