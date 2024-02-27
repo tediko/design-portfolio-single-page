@@ -2,6 +2,8 @@
 
 This time I decided to take on the *Design portfolio challenge*. It seemed like a good place to start learning the **CSS Grid**, which is a very powerful tool and I will definitely use it more often now. I tried a slightly different way of spacing elements. Instead of using multiple media queries for paddings, I tried to use `clamp` for that. There is less code, but in my opinion the readability is a bit worse and it is more difficult to make changes. The biggest challenge was writing an **accessible slider** from scratch.
 
+- Live Site URL: [design-portfolio-tediko.netlify.app](https://design-portfolio-tediko.netlify.app/)
+
 ## Table of contents
 
 - [My process](#my-process)
