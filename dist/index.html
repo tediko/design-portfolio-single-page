@@ -1,127 +1,572 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/css/style.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title>Amy design portfolio | Home</title>
-</head>
-<body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header__container container">
-      <a href="#" class="header__logo logo" aria-label="Amy design porftolio - Home"></a>
-      <a href="#" class="header__cta btn-primary">Free Consultation</a>
-    </div>
-  </header>
+/* Base */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Main -->
-  <main>
-    <h1 class="sr-only">Amy design portfolio homepage</h1>
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
 
-    <!-- Key Visual -->
-    <section class="kv">
-      <div class="kv__container container">
-        <div class="kv__content">
-          <h2 class="kv__title heading heading--lg">Design solutions made easy</h2>
-          <p class="kv__desc text">With over ten years of experience in various design disciplines, I’m your one-stop shop for your design needs.</p>
-        </div>
-        <nav class="kv__nav">
-          <ul class="kv__list">
-            <li class="kv__item kv__item--graphic">
-                <a href="#" class="kv__link">Graphic Design</a>
-            </li>
-            <li class="kv__item kv__item--ui-ux">
-                <a href="#" class="kv__link">UI/UX</a>
-            </li>
-            <li class="kv__item kv__item--apps">
-                <a href="#" class="kv__link">Apps</a>
-            </li>
-            <li class="kv__item kv__item--photography">
-              <a href="#" class="kv__link">Photography</a>
-            </li>
-            <li class="kv__item kv__item--illustrations">
-                <a href="#" class="kv__link">Illustrations</a>
-            </li>
-            <li class="kv__item kv__item--motion-graphics">
-                <a href="#" class="kv__link">Motion Graphics</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </section>
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd, ul {
+  margin-block-end: 0;
+  margin: 0;
+}
 
-    <!-- About -->
-    <section class="about">
-      <div class="about__container container">
-        <div class="about__photo">
-          <img src="./assets/image-amy.webp" alt="A photo of a smiling Amy on the abstract background" class="about__img">
-        </div>
-          <h2 class="about__title heading heading--big">I’m Amy, and I’d love to work on your next project</h2>
-          <p class="about__desc text">I love working with others to create beautiful design solutions. I’ve designed everything from brand illustrations to complete mobile apps. I’m also handy with a camera!</p>
-          <a href="#" class="about__cta btn-primary btn-primary--red">Free Consultation</a>
-      </div>
-    </section>
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul, ol {
+  list-style: none;
+}
 
-    <!-- Portfolio -->
-    <section class="portfolio" data-slider-container>
-      <div class="portfolio__container">
-        <h2 class="portfolio__title heading heading--md">My Work</h2>
-        <ul class="portfolio__list" data-slider>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-1.jpg" alt="Illustration of several lines crossed together in the letter X flying through the rain">
-          </li>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-2.jpg" alt="Abstract purple background with various geometric shapes">
-          </li>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-3.jpg" alt="Newspaper design with a bold healdine and eye-catching images">
-          </li>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-4.jpg" alt="The cover of the notebook is labeled 'Graphic Design' on top in a very graphic way">
-          </li>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-5.jpg" alt="A hand holding an iPhone, showcasing the UI/UX layout">
-          </li>
-        </ul>
-        <ul class="portfolio__controls">
-          <li>
-            <button type="button" class="portfolio__cta btn-arrow btn-arrow--left" aria-label="previous item" data-slider-btn="prev"></button>
-          </li>
-          <li>
-            <button type="button" class="portfolio__cta btn-arrow btn-arrow--right" aria-label="next item" data-slider-btn="next"></button>
-          </li>
-        </ul>
-        <div class="sr-only" aria-live="polite" aria-atomic="true" data-slider-liveregion>
-          <p></p>
-        </div>
-      </div>
-    </section>
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
 
-    <!-- Contact -->
-    <section class="contact">
-      <div class="contact__container container">
-        <div class="contact__content">
-          <h2 class="contact__title heading heading--big heading--white">Book a call with me</h2>
-          <p class="contact__desc text text--white">I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there.</p>
-          <a href="#" class="contact__cta btn-primary btn-primary--red">Free Consultation</a>
-        </div>
-      </div>
-    </section>
-  </main>
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer__container container">
-      <a href="#" class="footer__logo logo" aria-label="Amy design porftolio - Home"></a>
-      <a href="#" class="footer__cta btn-primary">Free Consultation</a>
-    </div>
-  </footer>
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
 
-  <!-- <script src="./js/index.js"></script> -->
-</body>
-</html>
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Colors */
+/* Backgrounds */
+/* Fonts */
+/* Media query breakpoints */
+/* Mixin to manage responsive breakpoints */
+/* Container */
+.container {
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+
+/* Heading */
+.heading {
+  color: hsl(0, 0%, 1%);
+}
+
+.heading--lg {
+  font-size: clamp(2.25rem, 1.682rem + 2.424vw, 3.5rem);
+  line-height: 1.25;
+}
+
+.heading--big {
+  font-size: clamp(1.625rem, 1.227rem + 1.697vw, 2.5rem);
+  line-height: 1.275;
+}
+
+.heading--md {
+  font-size: clamp(1.5rem, 1.273rem + 0.97vw, 2rem);
+  line-height: 1.25;
+}
+
+.heading--white {
+  color: hsl(28, 100%, 97%);
+}
+
+/* Text */
+.text {
+  font-size: clamp(1rem, 0.943rem + 0.242vw, 1.125rem);
+  line-height: 1.55;
+  color: hsl(30, 5%, 45%);
+  font-weight: 500;
+}
+
+.text--white {
+  color: hsl(28, 100%, 97%);
+}
+
+/* Screen readers only! */
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: hsl(28, 100%, 97%);
+  padding: 0 clamp(1rem, -0.428rem + 6.091vw, 2.5rem);
+}
+
+/* Layout */
+/* Header */
+.header {
+  padding: clamp(1rem, 0.489rem + 2.182vw, 2.125rem) 0 clamp(1rem, 0.517rem + 2.061vw, 2.063rem) 0;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__list {
+  display: grid;
+}
+.header__link {
+  text-decoration: none;
+}
+
+/* Key Visual */
+.kv {
+  padding: clamp(1rem, 0.517rem + 2.061vw, 2.063rem) 0 clamp(1.563rem, 0.341rem + 5.212vw, 4.25rem) 0;
+}
+.kv__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: clamp(2rem, 0.636rem + 5.818vw, 5rem);
+}
+.kv__title {
+  max-width: 23.9375rem;
+  margin-bottom: clamp(1rem, 0.583rem + 1.779vw, 1.438rem);
+}
+@media (min-width: 48.0625rem) {
+  .kv__title {
+    max-width: unset;
+  }
+}
+.kv__desc {
+  max-width: 17.5rem;
+}
+@media (min-width: 30.0625rem) {
+  .kv__desc {
+    max-width: 29rem;
+  }
+}
+@media (min-width: 48.0625rem) {
+  .kv__desc {
+    max-width: 34.5rem;
+  }
+}
+@media (min-width: 64rem) {
+  .kv__desc {
+    max-width: 44rem;
+  }
+}
+.kv__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 364px 182px 158px 182px 182px;
+  gap: 1.5rem;
+}
+@media (min-width: 48.0625rem) {
+  .kv__list {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 182px 158px 182px;
+  }
+}
+@media (min-width: 64rem) {
+  .kv__list {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 182px 158px;
+  }
+}
+.kv__item {
+  position: relative;
+  display: flex;
+  align-items: end;
+  background-color: hsl(252, 66%, 62%);
+  background-position: top 1.5rem right 1.5rem;
+  background-repeat: no-repeat;
+  background-size: 128px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: background-size 300ms ease-in-out, padding 300ms ease-in-out;
+}
+.kv__item:has(:focus-visible) {
+  outline: 3px dashed hsl(252, 66%, 62%);
+  outline-offset: 3px;
+  background-size: 40%;
+  padding-bottom: 30px;
+}
+@media (min-width: 48.0625rem) {
+  .kv__item:hover {
+    background-size: 40%;
+    padding-bottom: 30px;
+  }
+}
+.kv__item--graphic {
+  grid-column: span 2;
+  background-color: hsl(252, 66%, 62%);
+  background-image: url("../../assets/pattern-graphic-design.svg");
+}
+@media (min-width: 48.0625rem) {
+  .kv__item--graphic {
+    grid-row: span 2;
+  }
+}
+.kv__item--ui-ux {
+  background-color: hsl(28, 89%, 67%);
+  background-image: url("../../assets/pattern-ui-ux.svg");
+}
+.kv__item--apps {
+  background-color: hsl(0, 78%, 79%);
+  background-image: url("../../assets/pattern-apps.svg");
+}
+.kv__item--ui-ux, .kv__item--apps {
+  background-size: 64px;
+}
+@media (min-width: 48.0625rem) {
+  .kv__item--ui-ux:hover, .kv__item--apps:hover {
+    background-size: 44%;
+  }
+}
+.kv__item--photography {
+  grid-column: span 2;
+  background-color: hsl(172, 46%, 57%);
+  background-image: url("../../assets/pattern-photography.svg");
+  background-size: 160px;
+}
+@media (min-width: 48.0625rem) {
+  .kv__item--photography:hover {
+    background-size: 50%;
+  }
+}
+.kv__item--illustrations {
+  grid-column: span 2;
+  background-color: hsl(7, 77%, 66%);
+  background-image: url("../../assets/pattern-illustrations.svg");
+}
+.kv__item--motion-graphics {
+  grid-column: span 2;
+  background-color: hsl(314, 45%, 23%);
+  background-image: url("../../assets/pattern-motion-graphics.svg");
+}
+.kv__link {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(180, 0%, 100%);
+}
+.kv__link::after { /* Pseudo-content trick to make whole item clickable */
+  position: absolute;
+  content: "";
+  inset: 0;
+}
+.kv__link:focus-visible { /* Removed focus since whole item is clickable */
+  outline: none;
+}
+
+/* About */
+.about {
+  padding: clamp(3.125rem, 2.614rem + 2.182vw, 4.25rem) 0 0 0;
+  padding-bottom: 3.125rem;
+}
+@media (min-width: 48.0625rem) {
+  .about {
+    padding-bottom: 2.75rem;
+  }
+}
+.about__container {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+@media (min-width: 48.0625rem) {
+  .about__container {
+    grid-template: "photo -" auto "photo title" 1fr "photo desc" auto "photo cta" 1fr;
+    justify-items: start;
+    gap: 1.5rem 4.375rem;
+    text-align: left;
+  }
+}
+@media (min-width: 64rem) {
+  .about__container {
+    gap: 2.125rem 7.5125rem;
+  }
+}
+.about__photo {
+  margin-bottom: 1rem;
+}
+@media (min-width: 48.0625rem) {
+  .about__photo {
+    grid-area: photo;
+    margin: 0 0 0 -5.25rem;
+  }
+}
+@media (min-width: 64rem) {
+  .about__photo {
+    margin-left: 0;
+  }
+}
+.about__img {
+  max-width: 300px;
+}
+@media (min-width: 48.0625rem) {
+  .about__img {
+    max-width: 364px;
+  }
+}
+@media (min-width: 64rem) {
+  .about__img {
+    max-width: 445px;
+  }
+}
+.about__title {
+  max-width: 22.9375rem;
+}
+@media (min-width: 48.0625rem) {
+  .about__title {
+    grid-area: title;
+    max-width: 23.3rem;
+  }
+}
+@media (min-width: 64rem) {
+  .about__title {
+    align-self: end;
+    max-width: 31rem;
+  }
+}
+.about__desc {
+  max-width: 22rem;
+}
+@media (min-width: 30.0625rem) {
+  .about__desc {
+    max-width: 31rem;
+  }
+}
+@media (min-width: 48.0625rem) {
+  .about__desc {
+    grid-area: desc;
+    max-width: 31.6875rem;
+  }
+}
+@media (min-width: 64rem) {
+  .about__desc {
+    max-width: 33rem;
+  }
+}
+@media (min-width: 48.0625rem) {
+  .about__cta {
+    grid-area: cta;
+    align-self: start;
+  }
+}
+
+/* Portfolio */
+.portfolio {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  padding: 3.125rem 0 3.125rem 0;
+}
+@media (min-width: 48.0625rem) {
+  .portfolio {
+    padding: 2.75rem 0 2.75rem 0;
+  }
+}
+.portfolio__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 48.0625rem) {
+  .portfolio__container {
+    gap: 3.5rem;
+  }
+}
+.portfolio__title {
+  text-align: center;
+}
+.portfolio__list {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+@media (min-width: 48.0625rem) {
+  .portfolio__list {
+    gap: 1.875rem;
+  }
+}
+.portfolio__item {
+  min-width: 270px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (min-width: 48.0625rem) {
+  .portfolio__item {
+    min-width: 540px;
+  }
+}
+.portfolio__controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Contact */
+.contact {
+  padding: 3.125rem 0 1.25rem 0;
+}
+@media (min-width: 48.0625rem) {
+  .contact {
+    padding: 2.75rem 0 1.75rem 0;
+  }
+}
+.contact__container {
+  background: hsl(0, 0%, 1%);
+  border-radius: 10px;
+  padding: clamp(3.063rem, 2.153rem + 3.879vw, 5.063rem) clamp(1.5rem, -0.517rem + 8.606vw, 5.938rem) clamp(3.063rem, 2.153rem + 3.879vw, 5.063rem) clamp(1.5rem, 0.335rem + 4.97vw, 4.063rem);
+}
+.contact__content {
+  display: grid;
+  justify-items: center;
+  gap: 1.5625rem;
+  text-align: center;
+}
+@media (min-width: 64rem) {
+  .contact__content {
+    grid-template: "title cta" "desc cta";
+    justify-items: start;
+    text-align: left;
+  }
+}
+.contact__desc {
+  max-width: 29rem;
+}
+@media (min-width: 64rem) {
+  .contact__desc {
+    grid-area: desc;
+    max-width: 33rem;
+  }
+}
+@media (min-width: 64rem) {
+  .contact__cta {
+    grid-area: cta;
+    place-self: center end;
+  }
+}
+
+/* Footer */
+.footer {
+  padding: clamp(1.25rem, 1.023rem + 0.97vw, 1.75rem) 0 clamp(2rem, 1.091rem + 3.879vw, 4rem) 0;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__list {
+  display: grid;
+}
+.footer__link {
+  text-decoration: none;
+}
+
+/* Components */
+/* Logo */
+.logo {
+  width: clamp(48px, 2.545rem + 1.939vw, 64px);
+  height: clamp(48px, 2.545rem + 1.939vw, 64px);
+  background: url("../../assets/logo.svg");
+  background-size: cover;
+}
+.logo:focus-visible {
+  outline: 3px dashed hsl(252, 66%, 62%);
+  outline-offset: 3px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: hsl(0, 0%, 1%);
+  padding: clamp(0.875rem, 0.773rem + 0.436vw, 1.1rem) clamp(1.75rem, 1.259rem + 2.095vw, 2.83rem);
+  border-radius: 28px;
+  font-size: clamp(0.875rem, 0.818rem + 0.242vw, 1rem);
+  font-weight: 700;
+  text-decoration: none;
+  color: hsl(28, 100%, 97%);
+  transition: background-color 300ms ease-in-out;
+}
+.btn-primary:focus-visible {
+  outline: 3px dashed hsl(252, 66%, 62%);
+  outline-offset: 3px;
+  background-color: hsl(252, 66%, 62%);
+}
+@media (min-width: 48.0625rem) {
+  .btn-primary:hover {
+    background-color: hsl(252, 66%, 62%);
+  }
+}
+.btn-primary--red {
+  background-color: hsl(7, 77%, 66%);
+}
+.btn-primary--red:focus-visible {
+  background-color: hsl(28, 89%, 67%);
+}
+@media (min-width: 48.0625rem) {
+  .btn-primary--red:hover {
+    background-color: hsl(28, 89%, 67%);
+  }
+}
+
+.btn-arrow {
+  position: relative;
+  background-color: hsl(0, 0%, 1%);
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out;
+}
+.btn-arrow:focus-visible {
+  outline: 3px dashed hsl(252, 66%, 62%);
+  outline-offset: 3px;
+  background-color: hsl(252, 66%, 62%);
+  background-size: 16px;
+}
+@media (min-width: 48.0625rem) {
+  .btn-arrow:hover {
+    background-color: hsl(252, 66%, 62%);
+    background-size: 18px;
+  }
+}
+.btn-arrow--left {
+  background-image: url("../../assets/icon-arrow-left.svg");
+}
+.btn-arrow--right {
+  background-image: url("../../assets/icon-arrow-right.svg");
+}
+
+/*# sourceMappingURL=style.css.map */
