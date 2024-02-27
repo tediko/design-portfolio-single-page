@@ -134,7 +134,6 @@ const debounce = (callback, delay) => {
 // Check where the user clicked/touched on screen
 // and assign that value to onMouseDownX variable
 const handleMouseDown = (event) => {
-    console.log(event.target);
     event.preventDefault();
     onMouseDownX = event.clientX || event.changedTouches[0].pageX;
     slider.style.cursor = "grabbing";
@@ -193,7 +192,7 @@ slider.addEventListener('transitionend', () => {
     updateLiveregion();
 })
 
-slider.addEventListener('touchstart', (event) => handleMouseDown(event));
-slider.addEventListener('touchend', (event) => handleMouseUp(event));
-slider.addEventListener('mousedown', (event) => handleMouseDown(event));
-slider.addEventListener('mouseup', (event) => handleMouseUp(event));
+sliderContainer.addEventListener('touchstart', (event) => handleMouseDown(event));
+sliderContainer.addEventListener('touchend', (event) => handleMouseUp(event));
+sliderContainer.addEventListener('mousedown', (event) => handleMouseDown(event));
+sliderContainer.addEventListener('mouseup', (event) => handleMouseUp(event));
