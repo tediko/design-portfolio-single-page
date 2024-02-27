@@ -1,0 +1,50 @@
+@use '../utilities' as *;
+
+/* Portfolio */
+.portfolio {
+    $root: &;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    padding: clamp(3.125rem, 3.295rem + -0.727vw, 2.75rem) 0 clamp(3.125rem, 3.295rem + -0.727vw, 2.75rem) 0;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @include breakpoint('md') {
+            gap: 3.5rem;
+        }
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__list {
+        position: relative;
+        display: flex;
+        gap: 1rem;
+
+        @include breakpoint('md') {
+            gap: 1.875rem;
+        }
+    }
+
+    &__item {
+        min-width: 270px;
+        border-radius: 10px;
+        overflow: hidden;
+        
+        @include breakpoint('md') {
+            min-width: 540px;
+        }
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+}

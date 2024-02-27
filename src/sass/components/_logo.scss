@@ -1,0 +1,13 @@
+@use '../utilities' as *;
+/* Logo */
+.logo {
+    width: clamp(48px, 2.545rem + 1.939vw, 64px);
+    height: clamp(48px, 2.545rem + 1.939vw, 64px);
+    background: url('../../assets/logo.svg');
+    background-size: cover;
+
+    &:focus-visible {
+        outline: 3px dashed $c-blue-slate;
+        outline-offset: 3px;
+    }
+}

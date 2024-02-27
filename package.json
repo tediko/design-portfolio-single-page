@@ -1,0 +1,11 @@
+{
+  "name": "single-page-design-portfolio",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass-watch": "sass --watch src/sass/main.scss dist/styles/css/style.css"
+  },
+  "author": "tediko",
+  "license": "ISC"
+}

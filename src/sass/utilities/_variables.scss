@@ -1,0 +1,26 @@
+/* Colors */
+$c-black: hsl(0, 0%, 1%);
+$c-gray: hsl(30, 5%, 45%);
+$c-white: hsl(180, 0%, 100%);
+$c-white-seashell: hsl(28, 100%, 97%);
+$c-blue-slate: hsl(252, 66%, 62%);
+$c-orange-sandy: hsl(28, 89%, 67%);
+$c-pink-salmon: hsl(0, 78%, 79%);
+$c-red-peach: hsl(7, 77%, 66%);
+$c-blue-aqua: hsl(172, 46%, 57%);
+$c-purple: hsl(314, 45%, 23%);
+
+/* Backgrounds */
+$bg-primary: $c-white-seashell;
+
+/* Fonts */
+$ff-primary: "Plus Jakarta Sans", sans-serif;
+
+/* Media query breakpoints */
+$breakpoints: (
+    xs: 23.5rem,
+    sm: 30.0625rem,
+    md: 48.0625rem,
+    lg: 64rem,
+    xlg: 75rem
+);

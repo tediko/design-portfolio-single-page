@@ -1,0 +1,92 @@
+@use '../utilities' as *;
+
+/* About */
+.about {
+    $root: &;
+    padding: clamp(1.563rem, 0.341rem + 5.212vw, 4.25rem) 0 clamp(3.438rem, 3.466rem + -0.121vw, 3.375rem) 0;
+
+    &__container {
+        display: grid;
+        justify-items: center;
+        gap: 1.5rem;
+        text-align: center;
+
+        @include breakpoint('md') {
+            grid-template:
+                "photo -" auto
+                "photo title" 1fr
+                "photo desc" auto
+                "photo cta" 1fr; 
+            justify-items: start;
+            gap: 1.5rem 4.375rem;
+            text-align: left;
+        }
+
+        @include breakpoint('lg') {
+            gap: 2.125rem 7.8125rem;
+        }
+    }
+
+    &__photo {
+        margin-bottom: 1rem;
+
+        @include breakpoint('md') {
+            grid-area: photo;
+            margin: 0 0 0 -5.25rem;
+        }
+
+        @include breakpoint('lg') {
+            margin-left: 0;
+        }
+    }
+
+    &__img {
+        max-width: 300px;
+
+        @include breakpoint('md') {
+            max-width: 364px;
+        }
+
+        @include breakpoint('lg') {
+            max-width: 445px;
+        }
+    }
+
+    &__title {
+        max-width: 22.9375rem;
+
+        @include breakpoint('md') {
+            grid-area: title;
+            max-width: 23.3rem;
+        }
+
+        @include breakpoint('lg') {
+            align-self: end;
+            max-width: 31rem;
+        }
+    }
+
+    &__desc {
+        max-width: 22rem;
+
+        @include breakpoint('sm') {
+            max-width: 31rem;
+        }
+
+        @include breakpoint('md') {
+            grid-area: desc;
+            max-width: 31.6875rem;
+        }
+
+        @include breakpoint('lg') {
+            max-width: 33rem;
+        }
+    }
+
+    &__cta {
+        @include breakpoint('md') {
+            grid-area: cta;
+            align-self: start;
+        }
+    }
+}

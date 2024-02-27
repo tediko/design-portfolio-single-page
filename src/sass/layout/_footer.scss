@@ -1,0 +1,21 @@
+@use '../utilities' as *;
+
+/* Footer */
+.footer {
+    $root: &;
+    padding: clamp(1.25rem, 1.023rem + 0.97vw, 1.75rem) 0 clamp(2rem, 1.091rem + 3.879vw, 4rem) 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__list {
+        display: grid;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}

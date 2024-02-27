@@ -1,0 +1,76 @@
+@use '../utilities' as *;
+
+/* Buttons */
+.btn-primary {
+    background-color: $c-black;
+    padding: 
+        clamp(0.875rem, 0.773rem + 0.436vw, 1.1rem) 
+        clamp(1.75rem, 1.259rem + 2.095vw, 2.83rem);
+    border-radius: 28px;
+    font-size: clamp(0.875rem, 0.818rem + 0.242vw, 1rem);
+    font-weight: 700;
+    text-decoration: none;
+    color: $c-white-seashell;
+    transition: background-color 300ms ease-in-out;
+    
+    &:focus-visible {
+        outline: 3px dashed $c-blue-slate;
+        outline-offset: 3px;
+        background-color: $c-blue-slate;
+    }
+
+    @include breakpoint('md') {
+        &:hover {
+            background-color: $c-blue-slate;
+        }
+    }
+
+    &--red {
+        background-color: $c-red-peach;
+
+        &:focus-visible {
+            background-color: $c-orange-sandy;
+        }
+
+        @include breakpoint('md') {
+            &:hover {
+                background-color: $c-orange-sandy;
+            }
+        }
+    }
+}
+
+.btn-arrow {
+    position: relative;
+    background-color: $c-black;
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 300ms ease-in-out;
+
+    &:focus-visible {
+        outline: 3px dashed $c-blue-slate;
+        outline-offset: 3px;
+        background-color: $c-blue-slate;
+        background-size: 16px;
+    }
+
+    @include breakpoint('md') {
+        &:hover {
+            background-color: $c-blue-slate;
+            background-size: 18px;
+        }
+    }
+    &--left {
+        background-image: url('../../assets/icon-arrow-left.svg');
+    }
+
+    &--right {
+        background-image: url('../../assets/icon-arrow-right.svg');
+    }
+}

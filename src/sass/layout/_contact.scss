@@ -1,0 +1,47 @@
+@use '../utilities' as *;
+
+/* Contact */
+.contact {
+    $root: &;
+    padding: clamp(3.125rem, 3.295rem + -0.727vw, 2.75rem) 0 clamp(1.25rem, 1.023rem + 0.97vw, 1.75rem) 0;
+
+    &__container {
+        background: $c-black;
+        border-radius: 10px;
+        padding: clamp(3.063rem, 2.153rem + 3.879vw, 5.063rem) 
+                clamp(1.5rem, -0.517rem + 8.606vw, 5.938rem) 
+                clamp(3.063rem, 2.153rem + 3.879vw, 5.063rem) 
+                clamp(1.5rem, 0.335rem + 4.97vw, 4.063rem);
+    }
+
+    &__content {
+        display: grid;
+        justify-items: center;
+        gap: 1.5625rem;
+        text-align: center;
+
+        @include breakpoint('lg') {
+            grid-template: 
+                "title cta"
+                "desc cta";
+            justify-items: start;
+            text-align: left;
+        }
+    }
+    
+    &__desc {
+        max-width: 29rem;
+
+        @include breakpoint('lg') {
+            grid-area: desc;
+            max-width: 33rem;
+        }
+    }
+
+    &__cta {
+        @include breakpoint('lg') {
+            grid-area: cta;
+            place-self: center end;
+        }
+    }
+}

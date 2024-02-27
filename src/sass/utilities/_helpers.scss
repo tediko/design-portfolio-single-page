@@ -1,0 +1,58 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+/* Container */
+.container {
+    max-width: 69.375rem;
+    margin: 0 auto;
+}
+
+/* Heading */
+.heading {
+    color: $c-black;
+}
+
+.heading--lg {
+    font-size: clamp(2.25rem, 1.682rem + 2.424vw, 3.5rem);
+    line-height: 1.25;
+}
+
+.heading--big {
+    font-size: clamp(1.625rem, 1.227rem + 1.697vw, 2.5rem);
+    line-height: 1.275;
+}
+
+.heading--md {
+    font-size: clamp(1.5rem, 1.273rem + 0.97vw, 2rem);
+    line-height: 1.25;
+}
+
+.heading--white {
+    color: $c-white-seashell;
+}
+
+/* Text */
+.text {
+    font-size: clamp(1rem, 0.943rem + 0.242vw, 1.125rem);
+    line-height: 1.55;
+    color: $c-gray;
+}
+
+.text--white {
+    color: $c-white-seashell;
+}
+
+/* Screen readers only! */
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}

@@ -1,0 +1,21 @@
+@use '../utilities' as *;
+
+/* Header */
+.header {
+    $root: &;
+    padding: clamp(1rem, 0.489rem + 2.182vw, 2.125rem) 0 clamp(1rem, 0.517rem + 2.061vw, 2.063rem) 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__list {
+        display: grid;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}
