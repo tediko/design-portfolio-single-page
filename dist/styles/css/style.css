@@ -123,6 +123,7 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: hsl(28, 100%, 97%);
   padding: 0 clamp(1rem, -0.428rem + 6.091vw, 2.5rem);
+  overflow-x: hidden;
 }
 
 /* Layout */
@@ -395,7 +396,6 @@ body {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  overflow: hidden;
   padding: 3.125rem 0 3.125rem 0;
 }
 @media (min-width: 48.0625rem) {
