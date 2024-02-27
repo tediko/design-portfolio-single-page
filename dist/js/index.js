@@ -8,6 +8,7 @@ let sliderWidth, sliderGap, slideWidth;
 let counter, slidesWithClones, firstSlideIndex, lastSlideIndex;
 let isTransitionOver = true;
 let debounceTimer;
+let onMouseDownX;
 let direction;
 const nextDirectionName = 'next';
 const prevDirectionName = 'prev';
@@ -130,6 +131,31 @@ const debounce = (callback, delay) => {
     debounceTimer = setTimeout(() => callback(), delay);
 }
 
+// Check where the user clicked/touched on screen
+// and assign that value to onMouseDownX variable
+const handleMouseDown = (event) => {
+    event.preventDefault();
+    onMouseDownX = event.clientX || event.changedTouches[0].pageX;
+    slider.style.cursor = "grabbing";
+}
+
+// Check when the user released click/touch and save position
+// If user moved mouse more than trigger move to the next/prev slide.
+const handleMouseUp = (event) => {
+    let onMouseUpX = event.clientX || event.changedTouches[0].pageX;
+    let offset = onMouseDownX - onMouseUpX;
+    let trigger = slideWidth / 2;
+    slider.style.cursor = "grab";
+
+    if (offset > trigger) {
+        direction = nextDirectionName;
+        changeSlide();
+    } else if (offset < -trigger) {
+        direction = prevDirectionName;
+        changeSlide();
+    }
+}
+
 // ----------------
 // Event listeners
 // ----------------
@@ -165,3 +191,9 @@ slider.addEventListener('transitionend', () => {
     changeSlide(true);
     updateLiveregion();
 })
+
+sliderContainer.addEventListener('touchstart', (event) => handleMouseDown(event));
+sliderContainer.addEventListener('touchend', (event) => handleMouseUp(event));
+sliderContainer.addEventListener('mousedown', (event) => handleMouseDown(event));
+sliderContainer.addEventListener('mouseup', (event) => handleMouseUp(event));
+
