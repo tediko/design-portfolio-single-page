@@ -396,6 +396,7 @@ body {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
+  overflow: hidden;
   padding: 3.125rem 0 3.125rem 0;
 }
 @media (min-width: 48.0625rem) {
