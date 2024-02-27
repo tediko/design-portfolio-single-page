@@ -4,10 +4,13 @@ const slides = document.querySelectorAll('[data-slide]');
 const controlButtons = document.querySelectorAll('[data-slider-btn]');
 const liveregion = document.querySelector('[data-slider-liveregion]');
 
-let bodyWidth, bodyPadding, sliderGap, slideWidth;
+let sliderWidth, sliderGap, slideWidth;
 let counter, slidesWithClones, firstSlideIndex, lastSlideIndex;
 let isTransitionOver = true;
+let debounceTimer;
 let direction;
+const nextDirectionName = 'next';
+const prevDirectionName = 'prev';
 
 // Clone the first two and last two slides. 
 // Insert them at the beginning/end of the slider. 
@@ -25,13 +28,13 @@ const cloneSlides = () => {
     slider.prepend(lastButOneSlideClone, lastSlideClone);
 }
 
-// If there is some transition on slider return function. 
-// Assign event.dataset value to direction variable.
+// Return if there is some transition on slider. 
+// Assign dir value to direction variable.
 // Invoke changeSlide function.
-const handleClick = (event) => {
+const handleClick = (dir) => {
     if (!isTransitionOver) return;
     isTransitionOver = false;
-    direction = event.target.dataset.sliderBtn;
+    direction = dir;
     changeSlide();
 }
 
@@ -40,13 +43,13 @@ const handleClick = (event) => {
 // apply CSS transform styles to slider to position it. 
 const addSliderOffset = (slideIndex) => {
     counter = slideIndex;
-    const slideOffset = (-bodyPadding / 2 ) + (slideWidth * slideIndex) - ((bodyWidth - slideWidth) / 2);
+    const slideOffset = (-sliderGap / 2) + (slideWidth * slideIndex) - ((sliderWidth - slideWidth) / 2);
     slider.style.transform = `translateX(${slideOffset > 0 ? '-' : ''}${Math.abs(slideOffset)}px)`;
 }
 
 // Toggle CSS transition on slider
 const toggleTransition = (canTransition) => {
-    slider.style.transition = canTransition ? `transform 200ms ease-in-out` : 'none';
+    slider.style.transition = canTransition ? `transform 250ms ease-in-out` : 'none';
 }
 
 // Update liveregion for assistive technologies
@@ -71,11 +74,11 @@ const changeSlide = (checkForCloned = false) => {
     
     if (!checkForCloned) {
         toggleTransition(true);
-        if (direction === "next") {
+        if (direction === nextDirectionName) {
             counter++;
             addSliderOffset(counter);
             return;
-        } else if (direction === "prev") {
+        } else if (direction === prevDirectionName) {
             counter--;
             addSliderOffset(counter);
         }
@@ -83,9 +86,9 @@ const changeSlide = (checkForCloned = false) => {
 
     if (checkForCloned && isCloned) {
         toggleTransition(false)
-        if (direction === "next") {
+        if (direction === nextDirectionName) {
             addSliderOffset(firstSlideIndex);
-        } else if (direction === "prev") {
+        } else if (direction === prevDirectionName) {
             addSliderOffset(lastSlideIndex);
         }
     }
@@ -93,10 +96,9 @@ const changeSlide = (checkForCloned = false) => {
     hideTransitioningSlides();
 }
 
-// Get document and slider elements dimensions.
+// Get slider elements dimensions.
 const getElementSizes = () => {
-    bodyWidth = document.body.getBoundingClientRect().width;
-    bodyPadding = parseFloat(getComputedStyle(document.body).paddingLeft);
+    sliderWidth = slider.getBoundingClientRect().width;
     sliderGap = parseFloat(getComputedStyle(slider).gap); //gap between each slide
     slideWidth = slides[0].getBoundingClientRect().width + sliderGap;
 }
@@ -104,7 +106,6 @@ const getElementSizes = () => {
 // Update slider position.
 const handleResize = () => {
     getElementSizes()
-    sliderContainer.style.left = `-${bodyPadding}px`;
     addSliderOffset(counter);
 }
 
@@ -113,7 +114,6 @@ const initialLoad = () => {
     cloneSlides();
     getElementSizes();
 
-    sliderContainer.style.left = `-${bodyPadding}px`;
     slidesWithClones = document.querySelectorAll('[data-slide]');
     firstSlideIndex = 2; // first not cloned slide index
     lastSlideIndex = slidesWithClones.length - 3; // last not cloned slide index
@@ -124,14 +124,15 @@ const initialLoad = () => {
 
 // Debounce function
 // Restricting the rate at which a function is executed
-let debounceTimer;
 const debounce = (callback, delay) => {
     clearTimeout(debounceTimer);
 
     debounceTimer = setTimeout(() => callback(), delay);
 }
 
+// ----------------
 // Event listeners
+// ----------------
 addEventListener("load", () => {
     initialLoad();
 });
@@ -140,8 +141,23 @@ addEventListener("resize", () => {
     debounce(handleResize, 300);
 });
 
+addEventListener("keydown", (event) => {
+    let pressedKey = event.code;
+    let arrowDirection;
+    if (pressedKey === 'ArrowLeft') {
+        arrowDirection = prevDirectionName;
+        handleClick(arrowDirection);
+    } else if (pressedKey === 'ArrowRight') {
+        arrowDirection = nextDirectionName;
+        handleClick(arrowDirection);
+    }
+})
+
 controlButtons.forEach(button => {
-    button.addEventListener('click', (event) => handleClick(event))
+    button.addEventListener('click', (event) => {
+        let buttonDirection = event.target.dataset.sliderBtn;
+        handleClick(buttonDirection)
+    })
 })
 
 slider.addEventListener('transitionend', () => {
