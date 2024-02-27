@@ -42,5 +42,5 @@ To create **accessible slider** I used `cloneNode()` JavaScript method to clone 
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/tediko)
-- Twitter - [@yourusername](https://www.twitter.com/tediko123)
+- Frontend Mentor - [@tediko](https://www.frontendmentor.io/profile/tediko)
+- Twitter - [@tediko123](https://www.twitter.com/tediko123)
