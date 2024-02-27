@@ -397,7 +397,7 @@ body {
   position: relative;
   display: flex;
   gap: 1rem;
-  transform: translateX(-450px);
+  transform: translateX(-695px);
 }
 @media (min-width: 48.0625rem) {
   .portfolio__list {
