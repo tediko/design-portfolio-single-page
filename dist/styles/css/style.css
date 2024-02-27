@@ -243,6 +243,9 @@ body {
 .kv__item--ui-ux, .kv__item--apps {
   background-size: 64px;
 }
+.kv__item--ui-ux:has(:focus-visible), .kv__item--apps:has(:focus-visible) {
+  background-size: 44%;
+}
 @media (min-width: 48.0625rem) {
   .kv__item--ui-ux:hover, .kv__item--apps:hover {
     background-size: 44%;
@@ -253,6 +256,9 @@ body {
   background-color: hsl(172, 46%, 57%);
   background-image: url("../../assets/pattern-photography.svg");
   background-size: 160px;
+}
+.kv__item--photography:has(:focus-visible) {
+  background-size: 50%;
 }
 @media (min-width: 48.0625rem) {
   .kv__item--photography:hover {
