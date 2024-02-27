@@ -205,7 +205,7 @@ body {
   background-color: hsl(252, 66%, 62%);
   background-position: top 1.5rem right 1.5rem;
   background-repeat: no-repeat;
-  background-size: 36%;
+  background-size: 128px;
   padding: 1.5rem;
   border-radius: 8px;
   transition: background-size 300ms ease-in-out, padding 300ms ease-in-out;
@@ -240,10 +240,24 @@ body {
   background-color: hsl(0, 78%, 79%);
   background-image: url("../../assets/pattern-apps.svg");
 }
+.kv__item--ui-ux, .kv__item--apps {
+  background-size: 64px;
+}
+@media (min-width: 48.0625rem) {
+  .kv__item--ui-ux:hover, .kv__item--apps:hover {
+    background-size: 44%;
+  }
+}
 .kv__item--photography {
   grid-column: span 2;
   background-color: hsl(172, 46%, 57%);
   background-image: url("../../assets/pattern-photography.svg");
+  background-size: 160px;
+}
+@media (min-width: 48.0625rem) {
+  .kv__item--photography:hover {
+    background-size: 50%;
+  }
 }
 .kv__item--illustrations {
   grid-column: span 2;
@@ -373,6 +387,7 @@ body {
   overflow: hidden;
   width: 100vw;
   padding: 3.125rem 0 3.125rem 0;
+  left: -40px;
 }
 @media (min-width: 48.0625rem) {
   .portfolio {
@@ -396,6 +411,7 @@ body {
   position: relative;
   display: flex;
   gap: 1rem;
+  transform: translateX(-695px);
 }
 @media (min-width: 48.0625rem) {
   .portfolio__list {
