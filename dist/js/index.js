@@ -134,7 +134,6 @@ const debounce = (callback, delay) => {
 // Check where the user clicked/touched on screen
 // and assign that value to onMouseDownX variable
 const handleMouseDown = (event) => {
-    event.preventDefault();
     onMouseDownX = event.clientX || event.changedTouches[0].pageX;
     slider.style.cursor = "grabbing";
 }
