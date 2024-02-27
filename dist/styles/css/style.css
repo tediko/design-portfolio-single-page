@@ -96,6 +96,7 @@ textarea:not([rows]) {
   font-size: clamp(1rem, 0.943rem + 0.242vw, 1.125rem);
   line-height: 1.55;
   color: hsl(30, 5%, 45%);
+  font-weight: 500;
 }
 
 .text--white {
