@@ -105,6 +105,10 @@
         &--ui-ux, &--apps {
             background-size: 64px;
 
+            &:has(:focus-visible) {
+                background-size: 44%;
+            }
+
             @include breakpoint('md') {
                 &:hover {
                     background-size: 44%;
@@ -117,6 +121,10 @@
             background-color: $c-blue-aqua;
             background-image: url('../../assets/pattern-photography.svg');
             background-size: 160px;
+
+            &:has(:focus-visible) {
+                background-size: 50%;
+            }
 
             @include breakpoint('md') {
                 &:hover {
