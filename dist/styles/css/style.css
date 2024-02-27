@@ -271,7 +271,13 @@ body {
 
 /* About */
 .about {
-  padding: clamp(1.563rem, 0.341rem + 5.212vw, 4.25rem) 0 clamp(3.438rem, 3.466rem - 0.121vw, 3.375rem) 0;
+  padding: clamp(3.125rem, 2.614rem + 2.182vw, 4.25rem) 0 0 0;
+  padding-bottom: 3.125rem;
+}
+@media (min-width: 48.0625rem) {
+  .about {
+    padding-bottom: 2.75rem;
+  }
 }
 .about__container {
   display: grid;
@@ -289,7 +295,7 @@ body {
 }
 @media (min-width: 64rem) {
   .about__container {
-    gap: 2.125rem 7.8125rem;
+    gap: 2.125rem 7.5125rem;
   }
 }
 .about__photo {
@@ -365,7 +371,12 @@ body {
   position: relative;
   overflow: hidden;
   width: 100vw;
-  padding: clamp(3.125rem, 3.295rem - 0.727vw, 2.75rem) 0 clamp(3.125rem, 3.295rem - 0.727vw, 2.75rem) 0;
+  padding: 3.125rem 0 3.125rem 0;
+}
+@media (min-width: 48.0625rem) {
+  .portfolio {
+    padding: 2.75rem 0 2.75rem 0;
+  }
 }
 .portfolio__container {
   display: flex;
@@ -408,7 +419,12 @@ body {
 
 /* Contact */
 .contact {
-  padding: clamp(3.125rem, 3.295rem - 0.727vw, 2.75rem) 0 clamp(1.25rem, 1.023rem + 0.97vw, 1.75rem) 0;
+  padding: 3.125rem 0 1.25rem 0;
+}
+@media (min-width: 48.0625rem) {
+  .contact {
+    padding: 2.75rem 0 1.75rem 0;
+  }
 }
 .contact__container {
   background: hsl(0, 0%, 1%);
