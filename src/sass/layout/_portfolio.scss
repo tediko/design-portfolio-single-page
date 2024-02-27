@@ -3,9 +3,14 @@
 /* Portfolio */
 .portfolio {
     $root: &;
+
     position: relative;
-    overflow: hidden;
     width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
     padding: 3.125rem 0 3.125rem 0;
 
     @include breakpoint('md') {
