@@ -62,7 +62,7 @@
         background-color: $c-blue-slate;
         background-position: top 1.5rem right 1.5rem;
         background-repeat: no-repeat;
-        background-size: 36%;
+        background-size: 128px;
         padding: 1.5rem;
         border-radius: 8px;
         transition: background-size 300ms ease-in-out,
@@ -96,16 +96,33 @@
             background-color: $c-orange-sandy;
             background-image: url('../../assets/pattern-ui-ux.svg');
         }
-
+        
         &--apps {
             background-color: $c-pink-salmon;
             background-image: url('../../assets/pattern-apps.svg');
         }
 
+        &--ui-ux, &--apps {
+            background-size: 64px;
+
+            @include breakpoint('md') {
+                &:hover {
+                    background-size: 44%;
+                }
+            }
+        }
+        
         &--photography {
             grid-column: span 2;
             background-color: $c-blue-aqua;
             background-image: url('../../assets/pattern-photography.svg');
+            background-size: 160px;
+
+            @include breakpoint('md') {
+                &:hover {
+                    background-size: 50%;
+                }
+            }
         }
 
         &--illustrations {
