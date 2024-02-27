@@ -3,7 +3,12 @@
 /* About */
 .about {
     $root: &;
-    padding: clamp(1.563rem, 0.341rem + 5.212vw, 4.25rem) 0 clamp(3.438rem, 3.466rem + -0.121vw, 3.375rem) 0;
+    padding: clamp(3.125rem, 2.614rem + 2.182vw, 4.25rem) 0 0 0; 
+    padding-bottom: 3.125rem;
+
+    @include breakpoint('md') {
+        padding-bottom: 2.75rem;
+    }
 
     &__container {
         display: grid;
@@ -23,7 +28,7 @@
         }
 
         @include breakpoint('lg') {
-            gap: 2.125rem 7.8125rem;
+            gap: 2.125rem 7.5125rem;
         }
     }
 

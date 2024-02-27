@@ -3,8 +3,12 @@
 /* Contact */
 .contact {
     $root: &;
-    padding: clamp(3.125rem, 3.295rem + -0.727vw, 2.75rem) 0 clamp(1.25rem, 1.023rem + 0.97vw, 1.75rem) 0;
+    // padding: clamp(3.125rem, 3.295rem + -0.727vw, 2.75rem) 0 clamp(1.25rem, 1.023rem + 0.97vw, 1.75rem) 0;
+    padding: 3.125rem 0 1.25rem 0;
 
+    @include breakpoint('md') {
+        padding: 2.75rem 0 1.75rem 0;
+    }
     &__container {
         background: $c-black;
         border-radius: 10px;

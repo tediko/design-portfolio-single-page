@@ -6,7 +6,11 @@
     position: relative;
     overflow: hidden;
     width: 100vw;
-    padding: clamp(3.125rem, 3.295rem + -0.727vw, 2.75rem) 0 clamp(3.125rem, 3.295rem + -0.727vw, 2.75rem) 0;
+    padding: 3.125rem 0 3.125rem 0;
+
+    @include breakpoint('md') {
+        padding: 2.75rem 0 2.75rem 0;
+    }
 
     &__container {
         display: flex;
