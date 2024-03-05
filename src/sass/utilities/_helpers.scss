@@ -13,8 +13,12 @@
         [content-start] $content [content-end]
         $full [full-end];
 
-    & > * {
+    & > *:not(.full-width) {
         grid-column: content;
+    }
+
+    .full-width {
+        grid-column: full;
     }
 }
 
