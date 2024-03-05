@@ -3,35 +3,31 @@
 /* Contact */
 .contact {
     $root: &;
-    padding: 3.125rem 0 1.25rem 0;
+
+    display: grid;
+    justify-items: center;
+    gap: 1.5625rem;
+    background: $c-black;
+    border-radius: 10px;
+    text-align: center;
+    padding: clamp(3.063rem, 2.153rem + 3.879vw, 5.063rem) 
+    clamp(1.5rem, -0.517rem + 8.606vw, 5.938rem) 
+    clamp(3.063rem, 2.153rem + 3.879vw, 5.063rem) 
+    clamp(1.5rem, 0.335rem + 4.97vw, 4.063rem);
+    margin: 3.125rem 0 1.25rem 0;
 
     @include breakpoint('md') {
-        padding: 2.75rem 0 1.75rem 0;
-    }
-    &__container {
-        background: $c-black;
-        border-radius: 10px;
-        padding: clamp(3.063rem, 2.153rem + 3.879vw, 5.063rem) 
-                clamp(1.5rem, -0.517rem + 8.606vw, 5.938rem) 
-                clamp(3.063rem, 2.153rem + 3.879vw, 5.063rem) 
-                clamp(1.5rem, 0.335rem + 4.97vw, 4.063rem);
+        margin: 2.75rem 0 1.75rem 0;
     }
 
-    &__content {
-        display: grid;
-        justify-items: center;
-        gap: 1.5625rem;
-        text-align: center;
-
-        @include breakpoint('lg') {
-            grid-template: 
-                "title cta"
-                "desc cta";
-            justify-items: start;
-            text-align: left;
-        }
+    @include breakpoint('lg') {
+        grid-template: 
+            "title cta"
+            "desc cta";
+        justify-items: start;
+        text-align: left;
     }
-    
+   
     &__desc {
         max-width: 29rem;
 

@@ -4,6 +4,5 @@ body {
     min-height: 100vh;
     font-family: $ff-primary;
     background-color: $bg-primary;
-    padding: 0 clamp(1rem, -0.428rem + 6.091vw, 2.5rem);
     overflow-x: hidden;
 }
