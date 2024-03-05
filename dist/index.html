@@ -11,117 +11,118 @@
   <title>Amy design portfolio | Home</title>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header__container container">
-      <a href="#" class="header__logo logo" aria-label="Amy design porftolio - Home"></a>
-      <a href="#" class="header__cta btn-primary">Free Consultation</a>
-    </div>
-  </header>
+  <div class="grid-wrapper">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__container container">
+        <a href="#" class="header__logo logo" aria-label="Amy design porftolio - Home"></a>
+        <a href="#" class="header__cta btn-primary">Free Consultation</a>
+      </div>
+    </header>
 
-  <!-- Main -->
-  <main>
-    <h1 class="sr-only">Amy design portfolio homepage</h1>
+    <!-- Main -->
+    <main>
+      <h1 class="sr-only">Amy design portfolio homepage</h1>
 
-    <!-- Key Visual -->
-    <section class="kv">
-      <div class="kv__container container">
-        <div class="kv__content">
-          <h2 class="kv__title heading heading--lg">Design solutions made easy</h2>
-          <p class="kv__desc text">With over ten years of experience in various design disciplines, I’m your one-stop shop for your design needs.</p>
+      <!-- Key Visual -->
+      <section class="kv">
+        <div class="kv__container container">
+          <div class="kv__content">
+            <h2 class="kv__title heading heading--lg">Design solutions made easy</h2>
+            <p class="kv__desc text">With over ten years of experience in various design disciplines, I’m your one-stop shop for your design needs.</p>
+          </div>
+          <nav class="kv__nav">
+            <ul class="kv__list">
+              <li class="kv__item kv__item--graphic">
+                  <a href="#" class="kv__link">Graphic Design</a>
+              </li>
+              <li class="kv__item kv__item--ui-ux">
+                  <a href="#" class="kv__link">UI/UX</a>
+              </li>
+              <li class="kv__item kv__item--apps">
+                  <a href="#" class="kv__link">Apps</a>
+              </li>
+              <li class="kv__item kv__item--photography">
+                <a href="#" class="kv__link">Photography</a>
+              </li>
+              <li class="kv__item kv__item--illustrations">
+                  <a href="#" class="kv__link">Illustrations</a>
+              </li>
+              <li class="kv__item kv__item--motion-graphics">
+                  <a href="#" class="kv__link">Motion Graphics</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <nav class="kv__nav">
-          <ul class="kv__list">
-            <li class="kv__item kv__item--graphic">
-                <a href="#" class="kv__link">Graphic Design</a>
+      </section>
+
+      <!-- About -->
+      <section class="about">
+        <div class="about__container container">
+          <div class="about__photo">
+            <img src="./assets/image-amy.webp" alt="A photo of a smiling Amy on the abstract background" class="about__img">
+          </div>
+            <h2 class="about__title heading heading--big">I’m Amy, and I’d love to work on your next project</h2>
+            <p class="about__desc text">I love working with others to create beautiful design solutions. I’ve designed everything from brand illustrations to complete mobile apps. I’m also handy with a camera!</p>
+            <a href="#" class="about__cta btn-primary btn-primary--red">Free Consultation</a>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section class="portfolio" data-slider-container>
+        <div class="portfolio__container">
+          <h2 class="portfolio__title heading heading--md">My Work</h2>
+          <ul class="portfolio__list" data-slider>
+            <li class="portfolio__item" data-slide>
+              <img src="./assets/image-slide-1.jpg" alt="Illustration of several lines crossed together in the letter X flying through the rain">
             </li>
-            <li class="kv__item kv__item--ui-ux">
-                <a href="#" class="kv__link">UI/UX</a>
+            <li class="portfolio__item" data-slide>
+              <img src="./assets/image-slide-2.jpg" alt="Abstract purple background with various geometric shapes">
             </li>
-            <li class="kv__item kv__item--apps">
-                <a href="#" class="kv__link">Apps</a>
+            <li class="portfolio__item" data-slide>
+              <img src="./assets/image-slide-3.jpg" alt="Newspaper design with a bold healdine and eye-catching images">
             </li>
-            <li class="kv__item kv__item--photography">
-              <a href="#" class="kv__link">Photography</a>
+            <li class="portfolio__item" data-slide>
+              <img src="./assets/image-slide-4.jpg" alt="The cover of the notebook is labeled 'Graphic Design' on top in a very graphic way">
             </li>
-            <li class="kv__item kv__item--illustrations">
-                <a href="#" class="kv__link">Illustrations</a>
-            </li>
-            <li class="kv__item kv__item--motion-graphics">
-                <a href="#" class="kv__link">Motion Graphics</a>
+            <li class="portfolio__item" data-slide>
+              <img src="./assets/image-slide-5.jpg" alt="A hand holding an iPhone, showcasing the UI/UX layout">
             </li>
           </ul>
-        </nav>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="about">
-      <div class="about__container container">
-        <div class="about__photo">
-          <img src="./assets/image-amy.webp" alt="A photo of a smiling Amy on the abstract background" class="about__img">
+          <ul class="portfolio__controls">
+            <li>
+              <button type="button" class="portfolio__cta btn-arrow btn-arrow--left" aria-label="previous item" data-slider-btn="prev"></button>
+            </li>
+            <li>
+              <button type="button" class="portfolio__cta btn-arrow btn-arrow--right" aria-label="next item" data-slider-btn="next"></button>
+            </li>
+          </ul>
+          <div class="sr-only" aria-live="polite" aria-atomic="true" data-slider-liveregion>
+            <p></p>
+          </div>
         </div>
-          <h2 class="about__title heading heading--big">I’m Amy, and I’d love to work on your next project</h2>
-          <p class="about__desc text">I love working with others to create beautiful design solutions. I’ve designed everything from brand illustrations to complete mobile apps. I’m also handy with a camera!</p>
-          <a href="#" class="about__cta btn-primary btn-primary--red">Free Consultation</a>
-      </div>
-    </section>
+      </section>
 
-    <!-- Portfolio -->
-    <section class="portfolio" data-slider-container>
-      <div class="portfolio__container">
-        <h2 class="portfolio__title heading heading--md">My Work</h2>
-        <ul class="portfolio__list" data-slider>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-1.jpg" alt="Illustration of several lines crossed together in the letter X flying through the rain">
-          </li>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-2.jpg" alt="Abstract purple background with various geometric shapes">
-          </li>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-3.jpg" alt="Newspaper design with a bold healdine and eye-catching images">
-          </li>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-4.jpg" alt="The cover of the notebook is labeled 'Graphic Design' on top in a very graphic way">
-          </li>
-          <li class="portfolio__item" data-slide>
-            <img src="./assets/image-slide-5.jpg" alt="A hand holding an iPhone, showcasing the UI/UX layout">
-          </li>
-        </ul>
-        <ul class="portfolio__controls">
-          <li>
-            <button type="button" class="portfolio__cta btn-arrow btn-arrow--left" aria-label="previous item" data-slider-btn="prev"></button>
-          </li>
-          <li>
-            <button type="button" class="portfolio__cta btn-arrow btn-arrow--right" aria-label="next item" data-slider-btn="next"></button>
-          </li>
-        </ul>
-        <div class="sr-only" aria-live="polite" aria-atomic="true" data-slider-liveregion>
-          <p></p>
+      <!-- Contact -->
+      <section class="contact">
+        <div class="contact__container container">
+          <div class="contact__content">
+            <h2 class="contact__title heading heading--big heading--white">Book a call with me</h2>
+            <p class="contact__desc text text--white">I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there.</p>
+            <a href="#" class="contact__cta btn-primary btn-primary--red">Free Consultation</a>
+          </div>
         </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container container">
+        <a href="#" class="footer__logo logo" aria-label="Amy design porftolio - Home"></a>
+        <a href="#" class="footer__cta btn-primary">Free Consultation</a>
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact">
-      <div class="contact__container container">
-        <div class="contact__content">
-          <h2 class="contact__title heading heading--big heading--white">Book a call with me</h2>
-          <p class="contact__desc text text--white">I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there.</p>
-          <a href="#" class="contact__cta btn-primary btn-primary--red">Free Consultation</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer__container container">
-      <a href="#" class="footer__logo logo" aria-label="Amy design porftolio - Home"></a>
-      <a href="#" class="footer__cta btn-primary">Free Consultation</a>
-    </div>
-  </footer>
-
+    </footer>
+  </div>
   <script src="./js/index.js"></script>
 </body>
 </html>
