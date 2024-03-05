@@ -6,12 +6,11 @@
 
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: clamp(2rem, 0.572rem + 6.091vw, 3.5rem);
     padding: 3.125rem 0 3.125rem 0;
 
     @include breakpoint('md') {
         padding: 2.75rem 0 2.75rem 0;
-        gap: 3.5rem;
     }
     
     &__title {
@@ -21,10 +20,9 @@
     &__list {
         position: relative;
         display: flex;
-        gap: 1rem;
+        gap: clamp(1rem, 0.167rem + 3.553vw, 1.875rem);
 
         @include breakpoint('md') {
-            gap: 1.875rem;
             cursor: grab;
         }
     }
