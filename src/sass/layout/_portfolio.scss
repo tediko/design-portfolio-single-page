@@ -40,6 +40,10 @@
         @include breakpoint('md') {
             min-width: 540px;
         }
+
+        img {
+            pointer-events: none;
+        }
     }
 
     &__controls {
