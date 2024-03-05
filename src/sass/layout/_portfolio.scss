@@ -4,29 +4,16 @@
 .portfolio {
     $root: &;
 
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     padding: 3.125rem 0 3.125rem 0;
 
     @include breakpoint('md') {
         padding: 2.75rem 0 2.75rem 0;
+        gap: 3.5rem;
     }
-
-    &__container {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-
-        @include breakpoint('md') {
-            gap: 3.5rem;
-        }
-    }
-
+    
     &__title {
         text-align: center;
     }
