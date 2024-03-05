@@ -50,6 +50,7 @@
 .text {
     font-size: clamp(1rem, 0.943rem + 0.242vw, 1.125rem);
     line-height: 1.55;
+    font-weight: 500;
     color: $c-gray;
 }
 
