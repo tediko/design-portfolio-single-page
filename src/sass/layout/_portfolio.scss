@@ -18,6 +18,10 @@
         text-align: center;
     }
 
+    &__container {
+        user-select: none;
+    }
+
     &__list {
         position: relative;
         display: flex;
