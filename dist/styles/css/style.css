@@ -401,6 +401,9 @@ body {
 .portfolio__title {
   text-align: center;
 }
+.portfolio__container {
+  user-select: none;
+}
 .portfolio__list {
   position: relative;
   display: flex;
@@ -420,6 +423,9 @@ body {
   .portfolio__item {
     min-width: 540px;
   }
+}
+.portfolio__item img {
+  pointer-events: none;
 }
 .portfolio__controls {
   display: flex;
